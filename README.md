@@ -7,17 +7,6 @@ you roll out a bad update.
 
 Everything runs locally using Minikube so there's no cloud cost involved.
 
-## What it does
-
-Deploys a simple Node.js app to a local Kubernetes cluster with:
-
-- 2 replicas running at all times
-- Liveness and readiness probes so Kubernetes knows if the app is healthy
-- CPU and memory limits so the app can't consume all available resources
-- Horizontal Pod Autoscaler that scales up to 5 replicas under CPU load
-- Rolling updates so new versions deploy without downtime
-- One-command rollback if something goes wrong
-
 ## Project layout
 ```
 kubernetes-helm-deploy/
