@@ -1,4 +1,4 @@
-# kubernetes-helm-deploy
+kubernetes-helm-deploy
 
 A personal project to get hands-on with Kubernetes and Helm. I wanted to 
 understand how real deployments work beyond just running containers with 
@@ -7,7 +7,7 @@ you roll out a bad update.
 
 Everything runs locally using Minikube so there's no cloud cost involved.
 
-## Project layout
+Project layout
 ```
 kubernetes-helm-deploy/
 ├── app/
