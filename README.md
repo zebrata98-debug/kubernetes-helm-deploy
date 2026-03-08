@@ -22,17 +22,17 @@ Deploys a simple Node.js app to a local Kubernetes cluster with:
 ```
 kubernetes-helm-deploy/
 ├── app/
-│   ├── index.js           # Simple Node.js HTTP server
+│   ├── index.js           
 │   ├── package.json
 │   └── Dockerfile
 ├── helm/
 │   └── myapp/
-│       ├── Chart.yaml     # Helm chart metadata
-│       ├── values.yaml    # Configurable values
+│       ├── Chart.yaml     
+│       ├── values.yaml    
 │       └── templates/
-│           ├── deployment.yaml   # Kubernetes deployment
-│           ├── service.yaml      # Exposes the app
-│           └── hpa.yaml          # Autoscaling config
+│           ├── deployment.yaml   
+│           ├── service.yaml      
+│           └── hpa.yaml          
 └── README.md
 ```
 
