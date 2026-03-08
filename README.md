@@ -36,62 +36,31 @@ kubernetes-helm-deploy/
 └── README.md
 ```
 
-## How to run it
 
-You'll need Minikube, kubectl, Helm, and Docker installed.
-```bash
-# Start the cluster
 minikube start --driver=docker
 
-# Point Docker at Minikube's daemon
 eval $(minikube docker-env)
 
-# Build the app image
 docker build -t myapp:1.0 app/
 
-# Deploy with Helm
 helm install myapp-release helm/myapp
 
-# Check everything is running
 kubectl get pods
+
 kubectl get services
+
 kubectl get hpa
-```
 
-Get the URL to access the app:
-```bash
 minikube service myapp-release-myapp --url
-```
 
-## Deploying an update
-```bash
-# Build the new version
 docker build -t myapp:2.0 app/
 
-# Upgrade the release
 helm upgrade myapp-release helm/myapp --set image.tag=2.0
 
-# Watch the rolling update
 kubectl rollout status deployment/myapp-release-myapp
-```
 
-## Rolling back
-```bash
 helm rollback myapp-release 1
-```
 
-## Cleanup
-```bash
 helm uninstall myapp-release
 minikube stop
-```
 
-## What I learned
-
-- How Helm templates work and why they're useful over raw Kubernetes manifests
-- The difference between liveness and readiness probes and why both matter
-- How resource requests and limits affect pod scheduling
-- How the HPA decides when to scale and what metrics it uses
-- How rolling updates work under the hood — Kubernetes spins up new pods 
-  before terminating old ones
-- How to roll back a release instantly with a single Helm command
