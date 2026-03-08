@@ -32,8 +32,6 @@ eval $(minikube docker-env)
 
 docker build -t myapp:1.0 app/
 
-helm install myapp-release helm/myapp
-
 kubectl get pods
 
 kubectl get services
@@ -50,6 +48,5 @@ kubectl rollout status deployment/myapp-release-myapp
 
 helm rollback myapp-release 1
 
-helm uninstall myapp-release
 minikube stop
 
